@@ -1,0 +1,32 @@
+{% load static %}
+
+<!doctype html>
+<html ng-app="member_portal" lang="en-US" ng-strict-d>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Asset Management</title>
+
+    {% if DEBUG %}
+    <link type="text/css" rel="stylesheet" href="{% static 'member_portal/horizon/styles/vendor.css' %}"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'member_portal/horizon/styles/main.css' %}"/>
+    {% else %}
+    <link type="text/css" rel="stylesheet" href="{% static 'member_portal/horizon/styles/vendor.css.gz' %}"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'member_portal/horizon/styles/main.css.gz' %}"/>
+    {% endif %}
+
+  </head>
+  <body>
+    <base href="/">
+    <app-entry></app-entry>
+
+    {% if DEBUG %}
+    <script src="{% static 'member_portal/horizon/javascripts/vendor.js' %}"></script>
+    <script src="{% static 'member_portal/horizon/javascripts/main.js' %}"></script>
+    {% else %}
+    <script src="{% static 'member_portal/horizon/javascripts/vendor.js.gz' %}"></script>
+    <script src="{% static 'member_portal/horizon/javascripts/main.js.gz' %}"></script>
+    {% endif %}
+  </body>
+</html>
