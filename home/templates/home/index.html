@@ -22,9 +22,11 @@
     <app-entry></app-entry>
 
     {% if DEBUG %}
+    <script src="{% static 'member_portal/horizon/javascripts/manifest.js' %}"></script>
     <script src="{% static 'member_portal/horizon/javascripts/vendor.js' %}"></script>
     <script src="{% static 'member_portal/horizon/javascripts/main.js' %}"></script>
     {% else %}
+    <script src="{% static 'member_portal/horizon/javascripts/manifest.js.gz' %}"></script>
     <script src="{% static 'member_portal/horizon/javascripts/vendor.js.gz' %}"></script>
     <script src="{% static 'member_portal/horizon/javascripts/main.js.gz' %}"></script>
     {% endif %}
