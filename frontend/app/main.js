@@ -5,9 +5,10 @@ import uiRouter from '@uirouter/angularjs';
 
 angular.module('member_portal', [
   uiRouter,
-  require('./app-entry'),
-  require('./home'),
+  require('./app-entry').default,
+  require('./home').default,
+  require('./transform').default,
 ])
-  .config(['$stateProvider', function($stateProvider) {
-    $stateProvider.state("otherwise", { state : 'home' });
+  .run(['$urlService', function($urlService) {
+    $urlService.rules.otherwise({ state: 'home' });
   }]);
