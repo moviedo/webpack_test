@@ -6,6 +6,6 @@ function homeRoutes($stateProvider) {
   $stateProvider
     .state('home', {
       url: '/home',
-      template: "<home></home>"
+      template: '<home></home>'
     });
 }
